@@ -58,7 +58,7 @@ function setup() {
   //top
   blocks9 = new Block(700,95,30,40);
 
-  //ball holder with slings
+ 
   ball = Bodies.circle(50,200,20);
   World.add(world,ball);
 
@@ -70,9 +70,7 @@ function draw() {
   background(56,44,44); 
  
   imageMode(CENTER);
-  // write image() to display the polygon image 
-  //use the same x and y position as ball
-  image (rock_img,ball.position.x,ball.position.y,40,40)
+  image(rock_img ,ball.position.x,ball.position.y,40,40);
 
 
   stroke(0,0,0);
@@ -131,4 +129,14 @@ function mouseDragged(){
 }
 function mouseReleased(){
   slingShot.fly();
+}
+
+function keyPressed(){
+  //if(keyCode === 20)
+  //if(keyCode === 22)
+  //if(keyCode === 30)
+  if(keyCode === 32)
+  {
+      slingShot.attach(this.ball);
+  }
 }
